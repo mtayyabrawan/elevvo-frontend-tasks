@@ -1,3 +1,9 @@
+:root {
+    --bg-color: rgb(223, 233, 200);
+    --text-color: rgb(19, 17, 17);
+    --form-bg: rgb(187, 214, 122);
+    --form-shadow: rgb(39, 38, 38);
+}
 * {
     padding: 0;
     margin: 0;
@@ -5,8 +11,8 @@
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 body {
-    background-color: rgb(223, 233, 200);
-    color: rgb(19, 17, 17);
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 .container {
     max-width: 1540px;
@@ -37,7 +43,8 @@ main {
 form {
     border-radius: 0.25rem;
     padding: 2rem;
-    background-color: rgb(187, 214, 122);
+    background-color: var(--form-bg);
+    box-shadow: 0px 0px 0.75rem -5px var(--form-shadow);
     width: 60%;
     margin-inline: auto;
 }
@@ -50,8 +57,10 @@ input {
     padding: 0.5rem;
 }
 @media (prefers-color-scheme: dark) {
-    body {
-        background-color: rgb(22, 21, 21);
-        color: whitesmoke;
+    :root {
+        --bg-color: rgb(22, 21, 21);
+        --text-color: whitesmoke;
+        --form-bg: rgb(58, 66, 38);
+        --form-shadow: white;
     }
 }
