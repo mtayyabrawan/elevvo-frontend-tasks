@@ -1,0 +1,16 @@
+{
+    "name": "vanilla-js",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "pretty": "prettier --write .",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "prettier": "^3.6.2",
+        "vite": "^7.1.0"
+    }
+}
