@@ -8,22 +8,56 @@
         <title>Contact Form</title>
     </head>
 
-    <body>
+    <body class="scrollbar-custom">
         <div class="container">
             <header>
                 <h1>Contact Form</h1>
                 <p>Feel free to contact for any query or support</p>
             </header>
             <main>
-                <form>
+                <form novalidate autocomplete="off">
                     <div>
                         <label for="fullname">Full Name</label>
                         <input
+                            autocomplete="off"
                             type="text"
                             name="fullname"
                             id="fullname"
                             class="focus-none"
                         />
+                    </div>
+                    <div>
+                        <label for="subject">Subject</label>
+                        <input
+                            autocomplete="off"
+                            type="text"
+                            name="subject"
+                            id="subject"
+                            class="focus-none"
+                        />
+                    </div>
+                    <div class="grid-full">
+                        <label for="email">Email</label>
+                        <input
+                            autocomplete="off"
+                            type="email"
+                            name="email"
+                            id="email"
+                            class="focus-none"
+                        />
+                    </div>
+                    <div class="grid-full">
+                        <label for="message">Message</label>
+                        <textarea
+                            autocomplete="off"
+                            name="message"
+                            id="message"
+                            class="focus-none"
+                        ></textarea>
+                    </div>
+                    <div></div>
+                    <div>
+                        <button type="submit" class="focus-none">Submit</button>
                     </div>
                 </form>
             </main>
