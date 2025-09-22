@@ -7,6 +7,7 @@
     --input-txt: black;
     --btn-bg: rgb(106, 143, 52);
     --btn-txt: whitesmoke;
+    --error-color: red;
 }
 * {
     padding: 0;
@@ -26,6 +27,9 @@
     background-color: orangered;
     border-radius: 0.15rem;
     cursor: pointer;
+}
+.hidden {
+    display: none !important;
 }
 body {
     background-color: var(--bg-color);
@@ -71,6 +75,7 @@ form {
     font-size: small;
 }
 form > div {
+    position: relative;
     padding: 0 1rem;
     width: 100%;
     display: flex;
@@ -83,6 +88,17 @@ form > .grid-full {
 form > div > label {
     padding-inline: 0.5rem;
     cursor: pointer;
+}
+form > div > p {
+    position: absolute;
+    left: 0%;
+    top: 0.85rem;
+    color: var(--error-color);
+    font-size: smaller;
+    padding: 0 1.25rem;
+    width: 100%;
+    text-align: end;
+    text-wrap-mode: nowrap;
 }
 .focus-none:focus-visible {
     outline: none;
@@ -123,5 +139,6 @@ form button {
         --input-txt: whitesmoke;
         --btn-bg: greenyellow;
         --btn-txt: black;
+        --error-color: rgb(243, 118, 118);
     }
 }
