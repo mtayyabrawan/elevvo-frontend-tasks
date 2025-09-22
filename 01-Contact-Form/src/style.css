@@ -15,6 +15,10 @@
     box-sizing: border-box;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+*::selection {
+    background-color: var(--btn-bg);
+    color: var(--btn-txt);
+}
 *::-webkit-scrollbar {
     display: none;
 }

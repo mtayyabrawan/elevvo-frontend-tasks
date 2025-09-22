@@ -46,4 +46,3 @@ export function isEmpty(formdata, key) {
     }
     return false;
 }
-
