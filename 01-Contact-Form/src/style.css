@@ -8,6 +8,7 @@
     --btn-bg: rgb(106, 143, 52);
     --btn-txt: whitesmoke;
     --error-color: red;
+    --success-color: rgb(35, 119, 35);
 }
 * {
     padding: 0;
@@ -93,7 +94,7 @@ form > div > label {
     padding-inline: 0.5rem;
     cursor: pointer;
 }
-form > div > p {
+form > div > .error {
     position: absolute;
     left: 0%;
     top: 0.85rem;
@@ -133,6 +134,23 @@ form button {
     background-color: var(--btn-bg);
     color: var(--btn-txt);
 }
+.form-error,
+.form-success {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-error {
+    color: var(--error-color);
+}
+.form-success {
+    color: var(--success-color);
+}
+.submitting {
+    background-color: var(--btn-bg);
+    opacity: 0.85;
+    cursor: progress;
+}
 @media (prefers-color-scheme: dark) {
     :root {
         --bg-color: rgb(22, 21, 21);
@@ -144,5 +162,6 @@ form button {
         --btn-bg: greenyellow;
         --btn-txt: black;
         --error-color: rgb(243, 118, 118);
+        --success-color: rgb(84, 219, 84);
     }
 }
