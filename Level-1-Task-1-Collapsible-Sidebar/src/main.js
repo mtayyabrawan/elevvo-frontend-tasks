@@ -1,5 +1,7 @@
 const menuClose = document.querySelector(".menu-close");
 const menuOpen = document.querySelector(".menu-open");
+const themeBtn = document.querySelector(".theme-btn");
+const themeImg = document.querySelector(".theme-btn>img");
 const sidebar = document.querySelector(".sidebar");
 const nav = document.querySelector("nav");
 const sidebarContent = document.querySelector(".sidebar-inner");
@@ -18,4 +20,10 @@ menuClose.addEventListener("click", () => {
     setTimeout(() => {
         sidebar.classList.toggle("sidebar-open");
     }, 600);
+});
+
+themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    themeImg.src =
+        themeImg.getAttribute("src") === "/moon.svg" ? "/sun.svg" : "/moon.svg";
 });

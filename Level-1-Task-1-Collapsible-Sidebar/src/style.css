@@ -1,9 +1,18 @@
 :root {
-    --bg-color: rgb(14, 6, 22);
-    --txt-color: rgb(228, 243, 243);
-    --header-bg: rgba(14, 6, 22, 0.5);
-    --sidebar-bg: rgb(81, 38, 124);
-    --sidebar-header-bg: rgb(81, 38, 124, 0.5);
+    --bg-color: rgb(191, 184, 201);
+    --txt-color: rgb(5, 29, 29);
+    --header-bg: rgba(191, 184, 201, 0.5);
+    --sidebar-bg: rgb(229, 209, 248);
+    --sidebar-header-bg: rgba(229, 209, 248, 0.5);
+    --shadow-color: black;
+    .dark {
+        --bg-color: rgb(14, 6, 22);
+        --txt-color: rgb(228, 243, 243);
+        --header-bg: rgba(14, 6, 22, 0.5);
+        --sidebar-bg: rgb(81, 38, 124);
+        --sidebar-header-bg: rgb(81, 38, 124, 0.5);
+        --shadow-color: white;
+    }
 }
 * {
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -28,6 +37,7 @@
 body {
     background-color: var(--bg-color);
     color: var(--txt-color);
+    transition: all ease-in-out 300ms;
 }
 .container {
     width: 100%;
@@ -75,7 +85,7 @@ nav {
     height: fit-content;
     background-color: var(--sidebar-header-bg);
     backdrop-filter: blur(3px);
-    box-shadow: -1px 0px 9px -3px white inset;
+    box-shadow: -1px 0px 9px -3px var(--shadow-color) inset;
 }
 .sidebar-body {
     padding: 1rem 0;
@@ -87,17 +97,18 @@ nav {
 }
 .sidebar-body > a {
     text-align: center;
-    color: white;
+    color: var(--txt-color);
+    font-weight: 500;
     text-decoration: none;
     font-size: medium;
     padding: 1rem;
     width: 100%;
     background-color: var(--sidebar-header-bg);
-    box-shadow: -1px 0px 9px -3px white inset;
+    box-shadow: -1px 0px 9px -3px var(--shadow-color) inset;
     transition: all ease-in-out 600ms;
 }
 .sidebar-body > a:hover {
-    box-shadow: -1px 0px 15px -3px white inset;
+    box-shadow: -1px 0px 15px -3px var(--shadow-color) inset;
 }
 header {
     position: sticky;
@@ -109,7 +120,7 @@ header {
     width: 100%;
     background-color: var(--header-bg);
     backdrop-filter: blur(3px);
-    box-shadow: -1px 0px 9px -3px white inset;
+    box-shadow: -1px 0px 9px -3px var(--shadow-color) inset;
 }
 header > div {
     display: flex;
@@ -130,7 +141,7 @@ header > div {
 .logo {
     font-weight: 600;
     font-size: larger;
-    text-shadow: 0px 0px 0.25rem white;
+    text-shadow: 0px 0px 0.15rem var(--shadow-color);
 }
 .theme-btn {
     cursor: pointer;
