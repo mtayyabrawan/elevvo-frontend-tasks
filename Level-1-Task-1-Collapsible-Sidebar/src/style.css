@@ -56,7 +56,7 @@ nav {
     transition: all ease-in-out 600ms;
 }
 .nav-open {
-    width: 25%;
+    width: 20%;
 }
 .sidebar-inner {
     position: relative;
@@ -148,4 +148,29 @@ header > div {
 }
 .hidden {
     display: none;
+}
+@media screen and (max-width: 1280px) {
+    .nav-open {
+        width: 25%;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .nav-open {
+        width: 30%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .nav-open {
+        width: 40%;
+    }
+}
+@media screen and (max-width: 640px) {
+    .nav-open {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 425px) {
+    .nav-open {
+        width: 70%;
+    }
 }
