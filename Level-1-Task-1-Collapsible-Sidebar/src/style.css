@@ -2,6 +2,8 @@
     --bg-color: rgb(14, 6, 22);
     --txt-color: rgb(228, 243, 243);
     --header-bg: rgba(14, 6, 22, 0.5);
+    --sidebar-bg: rgb(81, 38, 124);
+    --sidebar-header-bg: rgb(81, 38, 124, 0.5);
 }
 * {
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -9,6 +11,19 @@
     margin: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+}
+*::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-custom::-webkit-scrollbar {
+    display: block;
+    width: 0.25rem;
+    background-color: black;
+}
+.scrollbar-custom::-webkit-scrollbar-thumb {
+    background-color: palevioletred;
+    border-radius: 0.15rem;
+    cursor: pointer;
 }
 body {
     background-color: var(--bg-color);
@@ -21,6 +36,68 @@ body {
     min-height: 100vh;
     margin-inline: auto;
     position: relative;
+}
+.sidebar {
+    position: fixed;
+    width: 100%;
+    max-width: 1540px;
+    height: 100%;
+    left: 50%;
+    translate: -50%;
+    z-index: -1;
+}
+.sidebar-open {
+    z-index: 2;
+}
+nav {
+    width: 0%;
+    height: 100%;
+    background-color: var(--sidebar-bg);
+    transition: all ease-in-out 600ms;
+}
+.nav-open {
+    width: 25%;
+}
+.sidebar-inner {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+.sidebar-header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    height: fit-content;
+    background-color: var(--sidebar-header-bg);
+    backdrop-filter: blur(3px);
+    box-shadow: -1px 0px 9px -3px white inset;
+}
+.sidebar-body {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    row-gap: 1rem;
+}
+.sidebar-body > a {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: medium;
+    padding: 1rem;
+    width: 100%;
+    background-color: var(--sidebar-header-bg);
+    box-shadow: -1px 0px 9px -3px white inset;
+    transition: all ease-in-out 600ms;
+}
+.sidebar-body > a:hover {
+    box-shadow: -1px 0px 15px -3px white inset;
 }
 header {
     position: sticky;
@@ -39,17 +116,16 @@ header > div {
     align-items: center;
     column-gap: 1.5rem;
 }
-.toggle-btn {
+.menu-open,
+.menu-close {
     background-color: transparent;
     border: none;
     height: 1rem;
     cursor: pointer;
 }
-.toggle-btn > img {
+.menu-open > img,
+.menu-close > img {
     height: 100%;
-}
-.focus-none:focus-visible {
-    outline: none;
 }
 .logo {
     font-weight: 600;
@@ -67,8 +143,9 @@ header > div {
 .theme-btn > img {
     height: 100%;
 }
-@media (prefers-color-scheme: light) {
-    :root {
-        --bg-color: rgb(158, 235, 235);
-    }
+.focus-none:focus-visible {
+    outline: none;
+}
+.hidden {
+    display: none;
 }

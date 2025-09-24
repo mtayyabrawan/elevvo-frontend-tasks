@@ -7,11 +7,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Collapsible Sidebar</title>
     </head>
-    <body>
+    <body class="scrollbar-custom">
         <div class="container">
+            <div class="sidebar">
+                <nav>
+                    <div class="sidebar-inner hidden">
+                        <div class="sidebar-header">
+                            <p class="logo">Future Dev</p>
+                            <button class="menu-close focus-none">
+                                <img src="src/assets/xmark-solid.svg" />
+                            </button>
+                        </div>
+                        <div class="sidebar-body">
+                            <a href="#">Home</a>
+                            <a href="#">BLog</a>
+                            <a href="#">About</a>
+                            <a href="#">Sevices</a>
+                            <a href="#">Contact</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
             <header>
                 <div>
-                    <button class="toggle-btn focus-none">
+                    <button class="menu-open focus-none">
                         <img src="src/assets/bars-solid.svg" />
                     </button>
                     <p class="logo">Future Dev</p>
