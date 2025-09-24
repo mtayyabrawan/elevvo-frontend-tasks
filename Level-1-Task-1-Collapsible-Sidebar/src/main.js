@@ -22,8 +22,40 @@ menuClose.addEventListener("click", () => {
     }, 600);
 });
 
-themeBtn.addEventListener("click", () => {
+themeBtn.addEventListener("click", toggleTheme);
+
+function toggleTheme() {
     document.body.classList.toggle("dark");
-    themeImg.src =
-        themeImg.getAttribute("src") === "/moon.svg" ? "/sun.svg" : "/moon.svg";
-});
+    if (themeImg.getAttribute("src") === "/moon.svg") {
+        themeImg.src = "/sun.svg";
+        localStorage.setItem("theme", "dark");
+    } else {
+        themeImg.src = "/moon.svg";
+        localStorage.setItem("theme", "light");
+    }
+}
+
+function setTheme() {
+    const storedTheme = localStorage.getItem("theme");
+    let userTheme;
+    if (
+        storedTheme !== null &&
+        (storedTheme === "dark" || storedTheme === "light")
+    ) {
+        userTheme = storedTheme;
+    } else {
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            userTheme = "dark";
+            localStorage.setItem("theme", "dark");
+        } else {
+            userTheme = "light";
+            localStorage.setItem("theme", "light");
+        }
+    }
+    if (userTheme === "dark") {
+        toggleTheme();
+    }
+    return;
+}
+
+setTheme();
