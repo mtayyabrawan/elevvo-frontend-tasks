@@ -1,9 +1,74 @@
+:root {
+    --bg-color: rgb(14, 6, 22);
+    --txt-color: rgb(228, 243, 243);
+    --header-bg: rgba(14, 6, 22, 0.5);
+}
 * {
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
-
+body {
+    background-color: var(--bg-color);
+    color: var(--txt-color);
+}
+.container {
+    width: 100%;
+    min-width: 320px;
+    max-width: 1540px;
+    min-height: 100vh;
+    margin-inline: auto;
+    position: relative;
+}
+header {
+    position: sticky;
+    top: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    background-color: var(--header-bg);
+    backdrop-filter: blur(3px);
+    box-shadow: -1px 0px 9px -3px white inset;
+}
+header > div {
+    display: flex;
+    align-items: center;
+    column-gap: 1.5rem;
+}
+.toggle-btn {
+    background-color: transparent;
+    border: none;
+    height: 1rem;
+    cursor: pointer;
+}
+.toggle-btn > img {
+    height: 100%;
+}
+.focus-none:focus-visible {
+    outline: none;
+}
+.logo {
+    font-weight: 600;
+    font-size: larger;
+    text-shadow: 0px 0px 0.25rem white;
+}
+.theme-btn {
+    cursor: pointer;
+    border: none;
+    height: 1.75rem;
+    background-color: white;
+    padding: 0.25rem;
+    border-radius: 50%;
+}
+.theme-btn > img {
+    height: 100%;
+}
 @media (prefers-color-scheme: light) {
+    :root {
+        --bg-color: rgb(158, 235, 235);
+    }
 }
