@@ -1,4 +1,6 @@
 import NewsLetter from "../../NewsLetter";
+import AndroidCard from "../AndroidCard";
+import AppleCard from "../AppleCard";
 import SocialLinks from "../SocialLinks";
 import ThemeToggle from "./ThemeToggle";
 
@@ -17,7 +19,13 @@ function Footer() {
             <div className="flex h-full w-full items-center justify-end px-8">
                 <SocialLinks />
             </div>
-            <div className="col-span-2 row-start-2 row-end-4 h-full w-full"></div>
+            <div className="col-span-2 row-start-2 row-end-4 grid h-full w-full grid-cols-2 grid-rows-1">
+                <div className="flex items-end justify-end gap-3 pr-10 pb-2.5">
+                    <AndroidCard />
+                    <AppleCard />
+                </div>
+                <div></div>
+            </div>
             <div className="col-span-2 flex h-full w-full items-center justify-between px-8 text-xs">
                 <div>
                     <ThemeToggle />

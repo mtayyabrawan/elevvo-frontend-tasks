@@ -10,13 +10,13 @@ import {
 
 function SocialLinks() {
     const links = [
-        { icon: <IconBrandFacebook size={20} />, href: "#facebook" },
-        { icon: <IconBrandX size={20} />, href: "#twitter" },
-        { icon: <IconBrandLinkedin size={20} />, href: "#linkedin" },
-        { icon: <IconBrandGithub size={20} />, href: "#github" },
-        { icon: <IconBrandYoutube size={20} />, href: "#youtube" },
-        { icon: <IconBrandInstagram size={20} />, href: "#instagram" },
-        { icon: <IconBrandPinterest size={20} />, href: "#pinterest" },
+        { icon: <IconBrandFacebook size={18} />, href: "#facebook" },
+        { icon: <IconBrandX size={18} />, href: "#twitter" },
+        { icon: <IconBrandLinkedin size={18} />, href: "#linkedin" },
+        { icon: <IconBrandGithub size={18} />, href: "#github" },
+        { icon: <IconBrandYoutube size={18} />, href: "#youtube" },
+        { icon: <IconBrandInstagram size={18} />, href: "#instagram" },
+        { icon: <IconBrandPinterest size={18} />, href: "#pinterest" },
     ];
     return (
         <div className="flex items-center justify-center gap-4">
