@@ -1,4 +1,5 @@
 import NewsLetter from "../../NewsLetter";
+import SocialLinks from "../SocialLinks";
 import ThemeToggle from "./ThemeToggle";
 
 function Footer() {
@@ -13,7 +14,9 @@ function Footer() {
                 </div>
                 <NewsLetter />
             </div>
-            <div></div>
+            <div className="flex h-full w-full items-center justify-end px-8">
+                <SocialLinks />
+            </div>
             <div className="col-span-2 row-start-2 row-end-4 h-full w-full"></div>
             <div className="col-span-2 flex h-full w-full items-center justify-between px-8 text-xs">
                 <div>
