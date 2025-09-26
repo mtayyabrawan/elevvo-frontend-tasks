@@ -1,6 +1,7 @@
 import NewsLetter from "../../NewsLetter";
 import AndroidCard from "../AndroidCard";
 import AppleCard from "../AppleCard";
+import FooterNav from "../FooterNav";
 import SocialLinks from "../SocialLinks";
 import ThemeToggle from "./ThemeToggle";
 
@@ -24,7 +25,7 @@ function Footer() {
                     <AndroidCard />
                     <AppleCard />
                 </div>
-                <div></div>
+                <FooterNav />
             </div>
             <div className="col-span-2 flex h-full w-full items-center justify-between px-8 text-xs">
                 <div>
