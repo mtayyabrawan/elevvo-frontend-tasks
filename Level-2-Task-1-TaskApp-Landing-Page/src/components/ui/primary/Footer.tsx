@@ -6,7 +6,7 @@ function Footer() {
             <div className="flex w-full items-center justify-between px-8">
                 <div className="text-sm">
                     <h1 className="text-lg font-medium">Newsletter</h1>
-                    <p className="text-sm">
+                    <p className="mt-1 text-sm">
                         Subscribe our news letter for latest updates
                     </p>
                 </div>

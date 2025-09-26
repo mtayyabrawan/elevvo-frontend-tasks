@@ -1,7 +1,9 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
-
+.transile {
+    transition: all ease-in-out 400ms;
+}
 *::-webkit-scrollbar {
     display: none;
 }
