@@ -36,7 +36,7 @@ function ThemeToggle() {
     return (
         <div
             id="theme"
-            className="flex cursor-pointer appearance-none items-center justify-center gap-0.75 rounded-2xl bg-stone-600 px-0.75 py-0.5 ring-[0.75px] focus-visible:outline-hidden"
+            className="flex w-fit cursor-pointer appearance-none items-center justify-center gap-0.75 rounded-2xl bg-stone-200 px-0.75 py-0.5 ring-[0.75px] ring-stone-600 focus-visible:outline-hidden dark:bg-stone-600 dark:ring-stone-200"
         >
             {buttons.map((btn) => (
                 <button
@@ -44,7 +44,7 @@ function ThemeToggle() {
                     id={btn.name}
                     type="button"
                     onClick={toggleTheme}
-                    className={`transile cursor-pointer rounded-full p-1 hover:bg-stone-500 focus-visible:outline-hidden ${theme === btn.name ? "bg-stone-800" : "bg-transparent"}`}
+                    className={`transile cursor-pointer rounded-full p-1 hover:bg-stone-400 focus-visible:outline-hidden dark:hover:bg-stone-500 ${theme === btn.name ? "bg-stone-500 dark:bg-stone-800" : "bg-transparent"}`}
                 >
                     {btn.icon}
                 </button>
