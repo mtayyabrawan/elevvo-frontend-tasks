@@ -25,7 +25,7 @@ function SocialLinks() {
                     key={idx}
                     href={lnk.href}
                     target="_blank"
-                    className="transile rounded-md bg-stone-600 p-1 hover:bg-stone-500"
+                    className="transile rounded-md bg-stone-400 p-1 hover:bg-stone-500 dark:bg-stone-600"
                 >
                     {lnk.icon}
                 </a>

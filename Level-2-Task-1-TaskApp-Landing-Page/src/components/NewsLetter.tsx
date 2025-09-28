@@ -32,12 +32,12 @@ function NewsLetter() {
                 placeholder="adam@mail.com"
                 autoComplete="off"
                 {...register("email")}
-                className={`transile w-full rounded-2xl bg-stone-600 p-1.5 indent-3 text-sm placeholder:text-stone-400 focus-visible:outline-hidden focus-visible:drop-shadow-xs focus-visible:drop-shadow-stone-950 ${errors.email ? "ring-[0.5px] ring-red-500" : ""}`}
+                className={`transile w-full rounded-2xl bg-stone-500 p-1.5 indent-3 text-sm placeholder:text-stone-400 focus-visible:outline-hidden focus-visible:drop-shadow-xs focus-visible:drop-shadow-stone-600 dark:bg-stone-700 dark:focus-visible:drop-shadow-stone-950 ${errors.email ? "ring-[0.5px] ring-red-500" : ""}`}
             />
             <button
                 type="submit"
                 disabled={isSubmitting}
-                className="transile cursor-pointer rounded-2xl bg-neutral-950 px-2 text-xs font-medium hover:bg-neutral-950/50 focus-visible:outline-hidden disabled:cursor-progress disabled:bg-neutral-950/50"
+                className="transile cursor-pointer rounded-2xl bg-neutral-400 px-2 text-xs font-medium hover:bg-neutral-600/50 focus-visible:outline-hidden disabled:cursor-progress disabled:bg-neutral-600/50 dark:bg-neutral-950 dark:hover:bg-neutral-950/50 dark:disabled:bg-neutral-950/50"
             >
                 Subscribe
             </button>
