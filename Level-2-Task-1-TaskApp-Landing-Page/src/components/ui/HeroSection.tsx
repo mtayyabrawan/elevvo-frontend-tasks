@@ -14,7 +14,7 @@ function HeroSection() {
                 </p>
                 <a
                     href="#get-started"
-                    className="transile ml-4 rounded-2xl bg-neutral-900 px-3 py-1.5 text-sm font-medium hover:bg-neutral-600"
+                    className="transile ml-4 rounded-2xl bg-neutral-400 px-3 py-1.5 text-sm font-medium hover:bg-neutral-600/50 dark:bg-neutral-900 dark:hover:bg-neutral-900/50"
                 >
                     Get Started
                 </a>
