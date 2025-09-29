@@ -29,7 +29,7 @@ function Feature({
                         className="h-full w-full object-cover"
                     />
                 </div>
-                <div className="h-40 w-[0.5px] bg-white"></div>
+                <div className="h-40 w-[0.5px] bg-black dark:bg-white"></div>
                 <div className="flex h-60 w-[47%] flex-col gap-3 p-4">
                     <h3 className="flex items-center justify-start gap-5">
                         {icon}
