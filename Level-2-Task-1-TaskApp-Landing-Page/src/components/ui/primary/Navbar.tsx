@@ -9,7 +9,7 @@ function Navbar() {
         { lable: "Blog", link: "#blog" },
     ];
     return (
-        <header className="sticky top-3 mx-auto grid h-12 w-[90%] grid-cols-2 grid-rows-1 place-items-center rounded-full bg-stone-50/40 px-1.5 ring-[1px] ring-stone-100 drop-shadow-sm drop-shadow-stone-200 backdrop-blur-xs dark:bg-stone-600/40 dark:ring-stone-500 dark:drop-shadow-stone-900">
+        <header className="sticky top-3 z-10 mx-auto grid h-12 w-[90%] grid-cols-2 grid-rows-1 place-items-center rounded-full bg-stone-50/40 px-1.5 ring-[1px] ring-stone-100 drop-shadow-sm drop-shadow-stone-200 backdrop-blur-xs dark:bg-stone-600/40 dark:ring-stone-500 dark:drop-shadow-stone-900">
             <div className="flex h-full w-full items-center justify-start pl-4 text-lg font-medium">
                 <Link
                     to="/"

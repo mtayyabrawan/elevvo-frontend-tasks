@@ -53,13 +53,14 @@ function FeaturesSection() {
     return (
         <div className="space-y-10">
             <h2 className="text-center text-xl font-medium">Features</h2>
-            {features.map((feature) => (
+            {features.map((feature, idx) => (
                 <Feature
                     title={feature.title}
                     icon={feature.icon}
                     description={feature.description}
                     imageSrc={feature.imageSrc}
                     position={feature.position as "left" | "right"}
+                    key={idx}
                 />
             ))}
         </div>

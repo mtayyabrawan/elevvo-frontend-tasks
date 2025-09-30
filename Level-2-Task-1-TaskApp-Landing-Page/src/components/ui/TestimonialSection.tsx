@@ -34,7 +34,7 @@ function TestimonialSection() {
     return (
         <div>
             <h2 className="text-center text-xl font-medium">Testimonials</h2>
-            <Marquee direction="left" speed={150} className="my-12">
+            <Marquee direction="left" speed={150} className="z-0 my-12">
                 {testimonials.map((user, idx) => (
                     <Testimonial
                         name={user.name}
