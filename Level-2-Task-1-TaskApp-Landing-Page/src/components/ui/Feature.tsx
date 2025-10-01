@@ -22,11 +22,11 @@ function Feature({
             <div
                 className={`mx-auto flex w-[90%] ${positionClasses[position]} items-center justify-between`}
             >
-                <div className="h-60 w-[47%]">
+                <div className="h-[12rem] w-[47%]">
                     <img
                         src={imageSrc}
                         alt="image"
-                        className="h-full w-full object-cover"
+                        className="h-full w-full rounded-md object-cover drop-shadow-xs drop-shadow-zinc-600 dark:drop-shadow-zinc-100"
                     />
                 </div>
                 <div className="h-40 w-[0.5px] bg-black dark:bg-white"></div>
