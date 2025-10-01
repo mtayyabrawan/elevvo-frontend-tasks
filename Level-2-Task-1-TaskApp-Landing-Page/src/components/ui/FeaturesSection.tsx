@@ -51,8 +51,10 @@ function FeaturesSection() {
         },
     ];
     return (
-        <div className="space-y-10">
-            <h2 className="text-center text-xl font-medium">Features</h2>
+        <div className="space-y-6 md:space-y-10">
+            <h2 className="text-center text-sm font-medium sm:text-lg md:text-xl">
+                Features
+            </h2>
             {features.map((feature, idx) => (
                 <Feature
                     title={feature.title}
