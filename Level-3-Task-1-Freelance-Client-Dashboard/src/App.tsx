@@ -1,5 +1,7 @@
+import BasicRoute from "./routers/BasicRoute";
+
 function App() {
-    return <div>App</div>;
+    return <BasicRoute />;
 }
 
 export default App;
