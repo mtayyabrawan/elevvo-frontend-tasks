@@ -18,8 +18,8 @@ function FooterNav() {
         { name: "Terms & Conditions", href: "#terms-and-conditions" },
     ];
     return (
-        <div className="flex h-full w-full items-center justify-center gap-5 px-10 py-2">
-            <div className="flex h-full w-36 flex-col items-start justify-center gap-1.5 text-xs">
+        <div className="flex h-full w-full items-center justify-center gap-1 py-0 sm:gap-2 sm:px-3 sm:py-2 lg:gap-5 lg:px-10">
+            <div className="flex h-full w-24 flex-col items-start justify-center gap-0.5 text-[0.55rem] sm:w-36 sm:justify-start sm:gap-1.5 sm:text-[0.65rem] md:text-xs">
                 {basicLinks.map((lnk, idx) => (
                     <a
                         href={lnk.href}
@@ -30,7 +30,7 @@ function FooterNav() {
                     </a>
                 ))}
             </div>
-            <div className="flex h-full w-36 flex-col items-start justify-center gap-1.5 text-xs">
+            <div className="flex h-full w-24 flex-col items-start justify-center gap-0.5 text-[0.55rem] sm:w-36 sm:justify-start sm:gap-1.5 sm:text-[0.65rem] md:text-xs">
                 {mainLinks.map((lnk, idx) => (
                     <a
                         href={lnk.href}
@@ -41,7 +41,7 @@ function FooterNav() {
                     </a>
                 ))}
             </div>
-            <div className="flex h-full w-36 flex-col items-start justify-center gap-1.5 text-xs">
+            <div className="flex h-full w-24 flex-col items-start justify-center gap-0.5 text-[0.55rem] sm:w-36 sm:justify-start sm:gap-1.5 sm:text-[0.65rem] md:text-xs">
                 {legalLinks.map((lnk, idx) => (
                     <a
                         href={lnk.href}

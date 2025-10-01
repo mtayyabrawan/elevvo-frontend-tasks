@@ -10,22 +10,40 @@ import {
 
 function SocialLinks() {
     const links = [
-        { icon: <IconBrandFacebook size={18} />, href: "#facebook" },
-        { icon: <IconBrandX size={18} />, href: "#twitter" },
-        { icon: <IconBrandLinkedin size={18} />, href: "#linkedin" },
-        { icon: <IconBrandGithub size={18} />, href: "#github" },
-        { icon: <IconBrandYoutube size={18} />, href: "#youtube" },
-        { icon: <IconBrandInstagram size={18} />, href: "#instagram" },
-        { icon: <IconBrandPinterest size={18} />, href: "#pinterest" },
+        {
+            icon: <IconBrandFacebook className="size-4 md:size-5" />,
+            href: "#facebook",
+        },
+        { icon: <IconBrandX className="size-4 md:size-5" />, href: "#twitter" },
+        {
+            icon: <IconBrandLinkedin className="size-4 md:size-5" />,
+            href: "#linkedin",
+        },
+        {
+            icon: <IconBrandGithub className="size-4 md:size-5" />,
+            href: "#github",
+        },
+        {
+            icon: <IconBrandYoutube className="size-4 md:size-5" />,
+            href: "#youtube",
+        },
+        {
+            icon: <IconBrandInstagram className="size-4 md:size-5" />,
+            href: "#instagram",
+        },
+        {
+            icon: <IconBrandPinterest className="size-4 md:size-5" />,
+            href: "#pinterest",
+        },
     ];
     return (
-        <div className="flex items-center justify-center gap-4">
+        <div className="flex items-center justify-center gap-2.5 md:gap-4">
             {links.map((lnk, idx) => (
                 <a
                     key={idx}
                     href={lnk.href}
                     target="_blank"
-                    className="transile rounded-md bg-stone-400 p-1 hover:bg-stone-500 dark:bg-stone-600"
+                    className="transile rounded-md bg-stone-400 p-0.75 hover:bg-stone-500 md:p-1 dark:bg-stone-600"
                 >
                     {lnk.icon}
                 </a>
