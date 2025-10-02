@@ -1,1 +1,18 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+.transile {
+    transition: all ease-in-out 400ms;
+}
+*::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-custom::-webkit-scrollbar {
+    display: block;
+    width: 0.15rem;
+    background-color: #1d293d;
+}
+.scrollbar-custom::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 0.15rem;
+    cursor: pointer;
+}
