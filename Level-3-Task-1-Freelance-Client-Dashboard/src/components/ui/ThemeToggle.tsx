@@ -7,24 +7,24 @@ function ThemeToggle() {
     useEffect(() => {
         document.documentElement.classList.toggle(
             "dark",
-            localStorage.taskeep_theme === "dark" ||
-                (!("taskeep_theme" in localStorage) &&
+            localStorage.freelance_dashboard_theme === "dark" ||
+                (!("freelance_dashboard_theme" in localStorage) &&
                     window.matchMedia("(prefers-color-scheme: dark)").matches)
         );
-        if ("taskeep_theme" in localStorage) {
-            setTheme(localStorage.taskeep_theme);
+        if ("freelance_dashboard_theme" in localStorage) {
+            setTheme(localStorage.freelance_dashboard_theme);
         } else setTheme("system");
     }, [theme]);
 
     function toggleTheme(e: MouseEvent<HTMLButtonElement>) {
         if (e.currentTarget.id === "system") {
-            localStorage.removeItem("taskeep_theme");
+            localStorage.removeItem("freelance_dashboard_theme");
             setTheme("system");
         } else if (e.currentTarget.id === "light") {
-            localStorage.taskeep_theme = "light";
+            localStorage.freelance_dashboard_theme = "light";
             setTheme("light");
         } else {
-            localStorage.taskeep_theme = "dark";
+            localStorage.freelance_dashboard_theme = "dark";
             setTheme("dark");
         }
     }
