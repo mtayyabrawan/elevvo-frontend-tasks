@@ -9,7 +9,7 @@ function DashboardLayout() {
                 <Header />
                 <div className="flex h-[calc(100%-3rem)] w-full">
                     <Sidebar />
-                    <main className="scrollbar-custom h-full w-[88%] overflow-y-auto">
+                    <main className="scrollbar-custom h-full w-[85%] overflow-y-auto">
                         <Outlet />
                     </main>
                 </div>
