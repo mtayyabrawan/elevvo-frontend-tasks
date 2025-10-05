@@ -2,6 +2,7 @@ import { IconBellFilled, IconLogout } from "@tabler/icons-react";
 import Profile from "../Profile";
 import ThemeToggle from "./ThemeToggle";
 import { useNavigate } from "react-router";
+import BaseHeader from "./common/BaseHeader";
 
 function Header() {
     const navigator = useNavigate();
@@ -9,8 +10,7 @@ function Header() {
         navigator("/");
     }
     return (
-        <header className="sticky top-0 flex h-12 items-center justify-between bg-slate-400 px-2 dark:bg-slate-800">
-            <h1 className="text-base font-medium">Freelance Dashboard</h1>
+        <BaseHeader link="/dashboard">
             <div className="flex items-center justify-center gap-4">
                 <IconLogout
                     onClick={handleLogout}
@@ -20,7 +20,7 @@ function Header() {
                 <IconBellFilled className="size-5 cursor-pointer" />
                 <ThemeToggle />
             </div>
-        </header>
+        </BaseHeader>
     );
 }
 

@@ -1,20 +1,19 @@
 import { Outlet } from "react-router";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
+import BaseLayout from "./common/BaseLayout";
 
 function DashboardLayout() {
     return (
-        <div className="w-full bg-zinc-300 text-black dark:bg-zinc-800 dark:text-white">
-            <div className="relative mx-auto h-screen w-full max-w-[1540px]">
-                <Header />
-                <div className="flex h-[calc(100%-3rem)] w-full">
-                    <Sidebar />
-                    <main className="scrollbar-custom h-full w-[85%] overflow-y-auto">
-                        <Outlet />
-                    </main>
-                </div>
+        <BaseLayout>
+            <Header />
+            <div className="flex h-[calc(100%-3rem)] w-full">
+                <Sidebar />
+                <main className="scrollbar-custom h-full w-[85%] overflow-y-auto">
+                    <Outlet />
+                </main>
             </div>
-        </div>
+        </BaseLayout>
     );
 }
 
