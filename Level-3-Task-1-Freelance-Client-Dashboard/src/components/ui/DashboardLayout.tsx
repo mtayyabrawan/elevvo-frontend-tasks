@@ -5,7 +5,7 @@ import BaseLayout from "./common/BaseLayout";
 
 function DashboardLayout() {
     return (
-        <BaseLayout>
+        <BaseLayout height="screen">
             <Header />
             <div className="flex h-[calc(100%-3rem)] w-full">
                 <Sidebar />

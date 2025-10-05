@@ -1,12 +1,16 @@
 import { Outlet } from "react-router";
 import BaseLayout from "./common/BaseLayout";
 import Navbar from "./common/Navbar";
+import Footer from "./common/Footer";
 
 function BasicLayout() {
     return (
-        <BaseLayout>
+        <BaseLayout height="auto">
             <Navbar />
-            <Outlet />
+            <div className="flex min-h-[calc(100%-8rem)] w-full">
+                <Outlet />
+            </div>
+            <Footer />
         </BaseLayout>
     );
 }
