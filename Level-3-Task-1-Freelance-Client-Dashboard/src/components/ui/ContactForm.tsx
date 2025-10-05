@@ -27,7 +27,7 @@ function ContactForm() {
 
     return (
         <form
-            className="h-auto w-[90%] space-y-3 rounded-md bg-slate-400/40 p-10"
+            className="h-auto w-[90%] space-y-3 rounded-md bg-slate-400/40 p-10 shadow-[0px_0px_3px_1px_black]"
             onSubmit={handleSubmit(formSubmit)}
             noValidate
         >

@@ -1,4 +1,5 @@
 import ContactForm from "../components/ui/ContactForm";
+import ContactInfo from "../components/ui/ContactInfo";
 
 function Contact() {
     return (
@@ -14,7 +15,7 @@ function Contact() {
                 </div>
             </div>
             <div className="grid h-fit w-full grid-cols-2 grid-rows-1 place-items-center">
-                <div className="h-full w-full">Hello</div>
+                <ContactInfo />
                 <ContactForm />
             </div>
         </div>
