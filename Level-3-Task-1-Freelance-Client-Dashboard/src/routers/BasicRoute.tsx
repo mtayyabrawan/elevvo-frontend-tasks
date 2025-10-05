@@ -5,13 +5,19 @@ import DashboardOverview from "../pages/DashboardOverview";
 import Projects from "../pages/Projects";
 import Profile from "../pages/Profile";
 import Home from "../pages/Home";
+import About from "../pages/About";
+import Contact from "../pages/Contact";
 import NotFound from "../pages/NotFound";
+import Blog from "../pages/Blog";
 
 function BasicRoute() {
     return (
         <Routes>
             <Route path="/" element={<BasicLayout />}>
                 <Route index element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/blog" element={<Blog />} />
             </Route>
             <Route path="/dashboard" element={<DashboardLayout />}>
                 <Route index element={<DashboardOverview />} />

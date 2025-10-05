@@ -9,7 +9,6 @@ function Navbar() {
         { name: "Blog", href: "/blog" },
         { name: "About", href: "/about" },
         { name: "Contact", href: "/contact" },
-        { name: "Portfolio", href: "/portfolio" },
     ];
     return (
         <BaseHeader link="/">
