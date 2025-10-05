@@ -7,7 +7,7 @@ function BasicLayout() {
     return (
         <BaseLayout height="auto">
             <Navbar />
-            <div className="flex min-h-[calc(100%-8rem)] w-full">
+            <div className="flex min-h-[calc(100vh-8rem)] w-full">
                 <Outlet />
             </div>
             <Footer />

@@ -7,7 +7,7 @@ function DashboardLayout() {
     return (
         <BaseLayout height="screen">
             <Header />
-            <div className="flex h-[calc(100%-3rem)] w-full">
+            <div className="flex h-[calc(100vh-3rem)] w-full">
                 <Sidebar />
                 <main className="scrollbar-custom h-full w-[85%] overflow-y-auto">
                     <Outlet />
