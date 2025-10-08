@@ -1,8 +1,7 @@
-import { IconLogout } from "@tabler/icons-react";
 import BaseHeader from "./BaseHeader";
-import Profile from "../../Profile";
 import ThemeToggle from "../ThemeToggle";
 import { Link } from "react-router";
+import AuthButtons from "../../AuthButtons";
 
 function Navbar() {
     const navlinks = [
@@ -22,8 +21,7 @@ function Navbar() {
                         {link.name}
                     </Link>
                 ))}
-                <IconLogout className="size-5 cursor-pointer" />
-                <Profile />
+                <AuthButtons />
                 <ThemeToggle />
             </div>
         </BaseHeader>
