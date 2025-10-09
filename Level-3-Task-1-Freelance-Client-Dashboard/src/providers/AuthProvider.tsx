@@ -7,6 +7,7 @@ import AuthContext, {
     type LoginStatus,
     type SignUpParams,
     type User,
+    type UserOptional,
 } from "../context/AuthContext";
 import useLocal from "../hooks/useLocal";
 import userMockData from "../data/userMockData";
@@ -96,15 +97,28 @@ function AuthProvider({ children }: { children: ReactNode }) {
         }, 1000);
     }
 
-    function updateUser({
-        name,
-        username,
-        email,
-        password,
-        profilePicture,
-    }: User) {
-        // TODO: implement update user
-        console.log(name, username, email, password, profilePicture);
+    function updateUser(updatedUser: UserOptional) {
+        const allUserData = getLocal<UserOptional[]>(
+            "freelance_dashboard_all_userdata"
+        );
+        if (!allUserData) {
+            setLocal({
+                key: "freelance_dashboard_all_userdata",
+                value: [{ ...userData, ...updatedUser }],
+            });
+        } else {
+            allUserData.push({ ...userData, ...updatedUser });
+            setLocal({
+                key: "freelance_dashboard_all_userdata",
+                value: allUserData,
+            });
+        }
+        setLocal({
+            key: "freelance_dashboard_userdata",
+            value: { ...userData, ...updatedUser },
+        });
+        setUserData({ ...userData, ...updatedUser });
+        toast.success("Your profile information updated successfully");
     }
 
     useEffect(() => {
@@ -113,11 +127,11 @@ function AuthProvider({ children }: { children: ReactNode }) {
         );
         if (loginStatus === true) {
             setLoggedIn(true);
-            const localUserData = getLocal<SignUpParams>(
+            const localUserData = getLocal<User>(
                 "freelance_dashboard_userdata"
             );
             if (localUserData) {
-                setUserData(userMockData);
+                setUserData(localUserData);
             } else {
                 setUserData(userMockData);
             }
