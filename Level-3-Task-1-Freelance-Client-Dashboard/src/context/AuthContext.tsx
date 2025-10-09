@@ -7,6 +7,8 @@ export interface BaseAuthParams {
 }
 export interface SignUpParams extends BaseAuthParams {
     name: string;
+    username?: string;
+    profilePicture?: string;
 }
 
 export interface User {
@@ -20,7 +22,7 @@ export interface User {
 export interface AuthValues {
     loggedIn: LoginStatus;
     userData: User;
-    login: (params: BaseAuthParams) => void;
+    login: (params: BaseAuthParams) => boolean;
     logout: () => void;
     signup: (params: SignUpParams) => void;
     updateUser: (userData: User) => void;
@@ -35,7 +37,7 @@ const AuthContext = createContext<AuthValues>({
         password: "",
         profilePicture: "",
     },
-    login: () => {},
+    login: () => false,
     logout: () => {},
     signup: () => {},
     updateUser: () => {},

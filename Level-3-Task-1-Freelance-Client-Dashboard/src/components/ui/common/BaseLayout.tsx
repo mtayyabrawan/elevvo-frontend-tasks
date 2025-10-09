@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Toaster } from "sonner";
 
 function BaseLayout({
     children,
@@ -16,6 +17,7 @@ function BaseLayout({
             <div
                 className={`relative mx-auto ${heights[height]} w-full max-w-[1540px]`}
             >
+                <Toaster position="top-center" />
                 {children}
             </div>
         </div>
