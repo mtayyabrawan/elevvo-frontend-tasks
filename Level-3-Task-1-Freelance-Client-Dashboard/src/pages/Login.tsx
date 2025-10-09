@@ -27,7 +27,7 @@ function Login() {
 
     useEffect(() => {
         if (loggedIn === true) navigator("/dashboard");
-    }, []);
+    }, [loggedIn]);
 
     return (
         <div className="w-full p-2">

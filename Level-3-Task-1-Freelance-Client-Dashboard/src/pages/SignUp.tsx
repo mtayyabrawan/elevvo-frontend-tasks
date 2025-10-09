@@ -28,7 +28,7 @@ function SignUp() {
 
     useEffect(() => {
         if (loggedIn === true) navigator("/dashboard");
-    }, []);
+    }, [loggedIn]);
 
     return (
         <div className="w-full p-2">
@@ -95,7 +95,7 @@ function SignUp() {
                     disabled={isSubmitting}
                     className="transile mx-auto flex w-[95%] cursor-pointer items-center justify-center gap-1 rounded-sm bg-slate-400 p-1.5 hover:bg-slate-400/70 focus-visible:outline-hidden dark:bg-slate-800 dark:hover:bg-slate-800/70"
                 >
-                    <p>SignUp</p>
+                    <p>Sign Up</p>
                     {isSubmitting && (
                         <IconLoaderQuarter className="animate-load size-4" />
                     )}
