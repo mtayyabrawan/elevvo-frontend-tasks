@@ -19,13 +19,21 @@ export interface User {
     password: string;
 }
 
+export interface UserOptional {
+    name?: string;
+    username?: string;
+    email?: string;
+    profilePicture?: string;
+    password?: string;
+}
+
 export interface AuthValues {
     loggedIn: LoginStatus;
     userData: User;
     login: (params: BaseAuthParams) => boolean;
     logout: () => void;
     signup: (params: SignUpParams) => void;
-    updateUser: (userData: User) => void;
+    updateUser: (userData: UserOptional) => void;
 }
 
 const AuthContext = createContext<AuthValues>({

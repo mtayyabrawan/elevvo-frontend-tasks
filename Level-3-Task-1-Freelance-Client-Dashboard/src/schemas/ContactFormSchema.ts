@@ -1,11 +1,8 @@
 import { z } from "zod";
+import { emailSchema, nameSchema } from "./BaseSchemas";
 
 const contactSchema = z.object({
-    name: z
-        .string({ error: "Name is required" })
-        .regex(/^[\w\s]+$/, { error: "Name can only have letters and spaces" })
-        .min(3, { error: "Name must have at least 3 characters" })
-        .max(20, { error: "Name can only contain max 20 characters" }),
+    name: nameSchema,
     subject: z
         .string({ error: "Subject is required" })
         .regex(/^[\w\d\s]+$/, {
@@ -13,7 +10,7 @@ const contactSchema = z.object({
         })
         .min(3, { error: "Subject must have at least 3 characters" })
         .max(20, { error: "Subject can only contain max 20 characters" }),
-    email: z.email({ error: "Email is required" }),
+    email: emailSchema,
     message: z
         .string({ error: "Message is required" })
         .regex(/^[\w\d\s]+$/, {
