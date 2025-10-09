@@ -92,7 +92,7 @@ function AuthProvider({ children }: { children: ReactNode }) {
         }
         toast.success("Sign up successfull");
         setTimeout(() => {
-            naviagtor("/login");
+            naviagtor("/auth/login");
         }, 1000);
     }
 
