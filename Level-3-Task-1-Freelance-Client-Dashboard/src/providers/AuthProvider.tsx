@@ -40,11 +40,11 @@ function AuthProvider({ children }: { children: ReactNode }) {
                     setLoggedIn(true);
                     setUserData(userExist);
                     setLocal({
-                        key: "freelance_dashboard_userdata",
+                        key: "freelancer_dashboard_login_status",
                         value: true,
                     });
                     setLocal({
-                        key: "freelancer_dashboard_login_status",
+                        key: "freelance_dashboard_userdata",
                         value: userExist,
                     });
                     toast.success("Login successfull");
