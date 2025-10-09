@@ -1,9 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import useAuth from "../hooks/useAuth";
 import { useForm } from "react-hook-form";
-import type { LoginType } from "../schemas/LoginSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import LoginSchema from "../schemas/LoginSchema";
+import LoginSchema, { type LoginType } from "../schemas/LoginSchema";
 import { IconLoaderQuarter, IconLogin } from "@tabler/icons-react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
@@ -27,7 +26,7 @@ function Login() {
     }
 
     useEffect(() => {
-        if (loggedIn) navigator("/dashboard");
+        if (loggedIn === true) navigator("/dashboard");
     }, []);
 
     return (
