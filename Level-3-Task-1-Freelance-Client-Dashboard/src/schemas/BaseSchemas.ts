@@ -28,4 +28,10 @@ export const passwordSchema = z
         "Password must contain at least 1 symbol"
     );
 
-export const usernameSchema = z.string();
+export const usernameSchema = z
+    .string()
+    .regex(/^[\w]+$/, {
+        error: "Username should be of numbers and lowercase letters",
+    })
+    .min(4, { error: "Minimum 4 characters are required" })
+    .max(15, { error: "Maximum 15 chars are allowed" });
