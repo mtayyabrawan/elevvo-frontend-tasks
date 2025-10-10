@@ -43,9 +43,15 @@ function Profile() {
                         <EditButton id="email" action={editAction} />
                     </div>
                     <div className="flex w-full items-center justify-between">
-                        <p className="text-base font-medium">
-                            {userData.username}
-                        </p>
+                        {userData.username ? (
+                            <p className="text-base font-medium">
+                                {userData.username}
+                            </p>
+                        ) : (
+                            <p className="text-red-500 dark:text-red-400">
+                                Update username
+                            </p>
+                        )}
                         <EditButton id="username" action={editAction} />
                     </div>
                 </div>
