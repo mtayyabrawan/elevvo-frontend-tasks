@@ -75,8 +75,8 @@ function AuthProvider({ children }: { children: ReactNode }) {
         }, 1000);
     }
 
-    function signup({ name, email, password }: SignUpParams) {
-        const allUserData = getLocal<SignUpParams[]>(
+    function signup({ name, email, password }: SignUpParams): boolean {
+        const allUserData = getLocal<UserOptional[]>(
             "freelance_dashboard_all_userdata"
         );
         if (!allUserData) {
@@ -85,6 +85,13 @@ function AuthProvider({ children }: { children: ReactNode }) {
                 value: [{ name, email, password }],
             });
         } else {
+            const userExist = allUserData.find((user: UserOptional) => {
+                return user.email === email;
+            });
+            if (userExist) {
+                toast.error("User already exist with this email");
+                return false;
+            }
             allUserData.push({ name, email, password });
             setLocal({
                 key: "freelance_dashboard_all_userdata",
@@ -95,10 +102,11 @@ function AuthProvider({ children }: { children: ReactNode }) {
         setTimeout(() => {
             naviagtor("/auth/login");
         }, 1000);
+        return true;
     }
 
     function updateUser(updatedUser: UserOptional) {
-        const allUserData = getLocal<UserOptional[]>(
+        let allUserData = getLocal<UserOptional[]>(
             "freelance_dashboard_all_userdata"
         );
         if (!allUserData) {
@@ -107,6 +115,9 @@ function AuthProvider({ children }: { children: ReactNode }) {
                 value: [{ ...userData, ...updatedUser }],
             });
         } else {
+            allUserData = allUserData.filter((user) => {
+                return user.email !== userData.email;
+            });
             allUserData.push({ ...userData, ...updatedUser });
             setLocal({
                 key: "freelance_dashboard_all_userdata",

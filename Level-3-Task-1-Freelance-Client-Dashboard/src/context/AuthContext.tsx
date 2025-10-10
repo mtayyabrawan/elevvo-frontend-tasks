@@ -32,7 +32,7 @@ export interface AuthValues {
     userData: User;
     login: (params: BaseAuthParams) => boolean;
     logout: () => void;
-    signup: (params: SignUpParams) => void;
+    signup: (params: SignUpParams) => boolean;
     updateUser: (userData: UserOptional) => void;
 }
 
@@ -47,7 +47,7 @@ const AuthContext = createContext<AuthValues>({
     },
     login: () => false,
     logout: () => {},
-    signup: () => {},
+    signup: () => false,
     updateUser: () => {},
 });
 
