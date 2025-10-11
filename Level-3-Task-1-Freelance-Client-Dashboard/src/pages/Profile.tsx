@@ -2,6 +2,7 @@ import { useState, type MouseEvent } from "react";
 import EditButton from "../components/ui/EditButton";
 import useAuth from "../hooks/useAuth";
 import EditModal from "../components/EditModal";
+import { IconPencil } from "@tabler/icons-react";
 
 function Profile() {
     const { userData } = useAuth();
@@ -21,11 +22,20 @@ function Profile() {
                 <EditModal modalId={modal.id} toggleModal={toggleModal} />
             )}
             <div className="mx-auto h-auto w-[75%] space-y-6 py-4">
-                <img
-                    src={userData.profilePicture}
-                    alt={userData.username}
-                    className="mx-auto block h-20 w-20 rounded-full object-cover"
-                />
+                <div className="relative mx-auto h-20 w-20">
+                    <img
+                        src={userData.profilePicture}
+                        alt={userData.username}
+                        className="h-full w-full rounded-full object-cover"
+                    />
+                    <button
+                        id="profilePicture"
+                        onClick={editAction}
+                        className="absolute right-0 bottom-0 cursor-pointer rounded-full bg-blue-700 p-1 focus-visible:outline-hidden dark:bg-blue-400"
+                    >
+                        <IconPencil className="size-4 text-white" />
+                    </button>
+                </div>
                 {userData.username && (
                     <p className="text-center text-sm font-medium">
                         {userData.username}

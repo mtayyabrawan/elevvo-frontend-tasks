@@ -7,6 +7,7 @@ import { z } from "zod";
 import {
     emailSchema,
     nameSchema,
+    profilePictureSchema,
     usernameSchema,
 } from "../schemas/BaseSchemas";
 
@@ -31,7 +32,9 @@ function EditModal({
                         ? emailSchema
                         : modalId === "name"
                           ? nameSchema
-                          : usernameSchema,
+                          : modalId === "username"
+                            ? usernameSchema
+                            : profilePictureSchema,
             })
         ),
         defaultValues: { value: userData[modalId as keyof User] },
@@ -40,7 +43,10 @@ function EditModal({
         value,
     }: {
         value: z.infer<
-            typeof emailSchema | typeof usernameSchema | typeof nameSchema
+            | typeof emailSchema
+            | typeof usernameSchema
+            | typeof nameSchema
+            | typeof profilePictureSchema
         >;
     }) {
         updateUser({ [modalId]: value });
@@ -61,10 +67,20 @@ function EditModal({
                         </p>
                     )}
                     <label htmlFor="value" className="w-[93%]">
-                        {capitalize(modalId)}
+                        {capitalize(
+                            modalId === "profilePicture"
+                                ? "Profile Picture"
+                                : modalId
+                        )}
                     </label>
                     <input
-                        type={modalId === "email" ? modalId : "text"}
+                        type={
+                            modalId === "email"
+                                ? modalId
+                                : modalId === "profilePicture"
+                                  ? "url"
+                                  : "text"
+                        }
                         id="value"
                         {...register("value")}
                         className={`w-[95%] rounded-md bg-slate-100 p-2 text-center ring-[1px] focus-visible:outline-hidden dark:bg-slate-950 ${errors.value ? "ring-red-500 dark:ring-red-400" : "ring-slate-500 dark:ring-slate-400"}`}
@@ -74,7 +90,7 @@ function EditModal({
                     <button
                         type="button"
                         onClick={() => toggleModal("")}
-                        className="cursor-pointer rounded-sm bg-red-400 p-1 text-xs font-medium focus-visible:outline-hidden dark:bg-red-500"
+                        className="cursor-pointer rounded-sm bg-gray-300 p-1 text-xs font-medium focus-visible:outline-hidden dark:bg-gray-400"
                     >
                         Cancel
                     </button>

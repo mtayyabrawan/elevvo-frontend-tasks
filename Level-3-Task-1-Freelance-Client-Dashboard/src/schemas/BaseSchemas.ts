@@ -35,3 +35,5 @@ export const usernameSchema = z
     })
     .min(4, { error: "Minimum 4 characters are required" })
     .max(15, { error: "Maximum 15 chars are allowed" });
+
+export const profilePictureSchema = z.url({ error: "Image must be a url" });
