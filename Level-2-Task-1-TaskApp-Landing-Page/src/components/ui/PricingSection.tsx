@@ -7,7 +7,10 @@ function PricingSection() {
                 Pricing
             </h2>
             <div className="grid h-fit min-h-[18rem] w-full grid-cols-1 grid-rows-3 justify-items-center gap-4 md:grid-cols-3 md:grid-rows-1 md:gap-0 lg:min-h-[22rem]">
-                <div className="flex h-full w-[80%] flex-col items-center justify-between rounded-2xl bg-stone-200 px-2 py-3 ring-1 sm:w-1/2 md:w-[95%] lg:w-[85%] lg:rounded-4xl lg:px-4 lg:py-5 dark:bg-stone-700">
+                <div
+                    className="flex h-full w-[80%] flex-col items-center justify-between rounded-2xl bg-stone-200 px-2 py-3 ring-1 sm:w-1/2 md:w-[95%] lg:w-[85%] lg:rounded-4xl lg:px-4 lg:py-5 dark:bg-stone-700"
+                    data-aos="zoom-in-right"
+                >
                     <h3 className="text-sm font-medium md:text-base lg:text-lg">
                         Free
                     </h3>
@@ -37,7 +40,10 @@ function PricingSection() {
                         Free
                     </button>
                 </div>
-                <div className="flex h-full w-[80%] flex-col items-center justify-between rounded-2xl bg-stone-200 px-2 py-3 ring-1 sm:w-1/2 md:w-[95%] lg:w-[85%] lg:rounded-4xl lg:px-4 lg:py-5 dark:bg-stone-700">
+                <div
+                    className="flex h-full w-[80%] flex-col items-center justify-between rounded-2xl bg-stone-200 px-2 py-3 ring-1 sm:w-1/2 md:w-[95%] lg:w-[85%] lg:rounded-4xl lg:px-4 lg:py-5 dark:bg-stone-700"
+                    data-aos="zoom-in"
+                >
                     <h3 className="text-sm font-medium md:text-base lg:text-lg">
                         Pro
                     </h3>
@@ -71,7 +77,10 @@ function PricingSection() {
                         $15 / Month
                     </button>
                 </div>
-                <div className="flex h-full w-[80%] flex-col items-center justify-between rounded-2xl bg-stone-200 px-2 py-3 ring-1 sm:w-1/2 md:w-[95%] lg:w-[85%] lg:rounded-4xl lg:px-4 lg:py-5 dark:bg-stone-700">
+                <div
+                    className="flex h-full w-[80%] flex-col items-center justify-between rounded-2xl bg-stone-200 px-2 py-3 ring-1 sm:w-1/2 md:w-[95%] lg:w-[85%] lg:rounded-4xl lg:px-4 lg:py-5 dark:bg-stone-700"
+                    data-aos="zoom-in-left"
+                >
                     <h3 className="text-sm font-medium md:text-base lg:text-lg">
                         Team
                     </h3>

@@ -1,8 +1,13 @@
 import { IconBasketCheck } from "@tabler/icons-react";
 
+
 function HeroSection() {
+    
     return (
-        <div className="flex h-28 w-full items-center justify-center rounded-md bg-[url(/hero.png)] bg-cover bg-center sm:h-48 md:h-60">
+        <div
+            className="flex h-28 w-full items-center justify-center rounded-md bg-[url(/hero.png)] bg-cover bg-center sm:h-48 md:h-60"
+            data-aos="fade-down"
+        >
             <div className="flex h-full w-full flex-col items-start justify-center gap-1 rounded-md bg-stone-50/20 pl-4 backdrop-blur-[2px] sm:gap-1.5 sm:pl-14 md:gap-4 md:pl-20 lg:pl-28 dark:bg-stone-500/60">
                 <div className="flex items-center justify-start gap-4 px-1 sm:px-4 md:gap-6">
                     <IconBasketCheck className="size-8 sm:size-10 md:size-14" />
