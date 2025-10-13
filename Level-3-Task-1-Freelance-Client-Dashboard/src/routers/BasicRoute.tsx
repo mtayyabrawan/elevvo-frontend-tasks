@@ -11,6 +11,7 @@ import NotFound from "../pages/NotFound";
 import Blog from "../pages/Blog";
 import SignUp from "../pages/SignUp";
 import Login from "../pages/Login";
+import Notifications from "../pages/Notifications";
 
 function BasicRoute() {
     return (
@@ -29,6 +30,7 @@ function BasicRoute() {
                 <Route index element={<DashboardOverview />} />
                 <Route path="projects" element={<Projects />} />
                 <Route path="profile" element={<Profile />} />
+                <Route path="notifications" element={<Notifications />} />
             </Route>
             <Route path="*" element={<NotFound />} />
         </Routes>
