@@ -1,8 +1,8 @@
-import { IconBellFilled } from "@tabler/icons-react";
 import Profile from "../Profile";
 import ThemeToggle from "./ThemeToggle";
 import BaseHeader from "./common/BaseHeader";
 import LogoutButton from "../LogoutButton";
+import NotificationDropdown from "../NotificationManager";
 
 function Header() {
     return (
@@ -10,7 +10,7 @@ function Header() {
             <div className="flex items-center justify-center gap-4">
                 <LogoutButton />
                 <Profile />
-                <IconBellFilled className="size-5 cursor-pointer" />
+                <NotificationDropdown />
                 <ThemeToggle />
             </div>
         </BaseHeader>
