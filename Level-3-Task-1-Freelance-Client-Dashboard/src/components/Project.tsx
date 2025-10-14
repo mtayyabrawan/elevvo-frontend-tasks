@@ -6,6 +6,7 @@ import {
 import useProject from "../hooks/useProject";
 import capitalize from "../utility/capitalize";
 import Rating from "./ui/Rating";
+import { Link } from "react-router";
 
 function Project({ id }: { id: number }) {
     const { getOne } = useProject();
@@ -28,9 +29,12 @@ function Project({ id }: { id: number }) {
                 className="h-1/2 w-full rounded-sm object-cover"
             />
             <div className="w-full space-y-2 p-2">
-                <h2 className="line-clamp-1 w-full text-base font-medium">
+                <Link
+                    to={`/dashboard/project/${project?.id}`}
+                    className="line-clamp-1 w-full text-base font-medium"
+                >
                     {project?.name}
-                </h2>
+                </Link>
                 <p className="pl-2 text-right text-sm font-medium">
                     ${project?.price}
                 </p>
@@ -41,7 +45,7 @@ function Project({ id }: { id: number }) {
                     <div className="flex items-center justify-center gap-2 text-xs">
                         <img
                             src={project?.client.image}
-                            alt="client1"
+                            alt="client_img"
                             className="h-8 w-8 rounded-full object-cover ring-[0.5px]"
                         />
                         <p>{project?.client.name}</p>
