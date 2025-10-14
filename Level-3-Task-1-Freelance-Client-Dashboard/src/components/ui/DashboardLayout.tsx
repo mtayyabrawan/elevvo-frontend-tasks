@@ -5,6 +5,7 @@ import BaseLayout from "./common/BaseLayout";
 import useAuth from "../../hooks/useAuth";
 import Loader from "./Loader";
 import NotificationProvider from "../../providers/NotificationProvider";
+import ProjectProvider from "../../providers/ProjectProvider";
 
 function DashboardLayout() {
     const navigator = useNavigate();
@@ -13,13 +14,15 @@ function DashboardLayout() {
         return (
             <BaseLayout height="screen">
                 <NotificationProvider>
-                    <Header />
-                    <div className="flex h-[calc(100vh-3rem)] w-full">
-                        <Sidebar />
-                        <main className="scrollbar-custom h-full w-[85%] overflow-y-auto">
-                            <Outlet />
-                        </main>
-                    </div>
+                    <ProjectProvider>
+                        <Header />
+                        <div className="flex h-[calc(100vh-3rem)] w-full">
+                            <Sidebar />
+                            <main className="scrollbar-custom h-full w-[85%] overflow-y-auto">
+                                <Outlet />
+                            </main>
+                        </div>
+                    </ProjectProvider>
                 </NotificationProvider>
             </BaseLayout>
         );
