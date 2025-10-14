@@ -5,6 +5,9 @@ function Notifications() {
     const { notifications, markAsRead, deleteOne } = useNotification();
     return (
         <div className="h-full w-full space-y-4 p-4">
+            <h1 className="text-center text-lg font-medium">
+                All Notifications
+            </h1>
             {notifications.map((notification) => (
                 <div
                     id={`${notification.id}`}
