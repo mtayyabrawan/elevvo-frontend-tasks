@@ -2,11 +2,11 @@ import { IconStarFilled } from "@tabler/icons-react";
 
 function Rating({ rating }: { rating: number }) {
     const stars = [
-        <IconStarFilled className="size-3" />,
-        <IconStarFilled className="size-3" />,
-        <IconStarFilled className="size-3" />,
-        <IconStarFilled className="size-3" />,
-        <IconStarFilled className="size-3" />,
+        <IconStarFilled className="size-3" key={0} />,
+        <IconStarFilled className="size-3" key={1} />,
+        <IconStarFilled className="size-3" key={2} />,
+        <IconStarFilled className="size-3" key={3} />,
+        <IconStarFilled className="size-3" key={4} />,
     ];
 
     return (

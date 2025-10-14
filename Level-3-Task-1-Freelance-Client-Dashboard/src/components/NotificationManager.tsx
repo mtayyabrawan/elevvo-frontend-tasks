@@ -70,8 +70,8 @@ function NotificationManager() {
                     </div>
                     <div className="scrollbar-custom flex h-[88%] w-full flex-col items-center justify-start gap-2 overflow-y-auto p-2 text-xs">
                         {unreadNotifications.length ? (
-                            unreadNotifications.map((notification) => (
-                                <Notification id={notification.id} />
+                            unreadNotifications.map((notification, idx) => (
+                                <Notification id={notification.id} key={idx} />
                             ))
                         ) : (
                             <p className="text-xs font-medium text-red-500">
