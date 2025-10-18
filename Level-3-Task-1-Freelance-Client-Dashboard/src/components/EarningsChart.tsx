@@ -57,6 +57,14 @@ function EarningsChart() {
     return (
         <div className="flex h-72 w-full items-center justify-center">
             <Bar
+                options={{
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            labels: { color: "white" },
+                        },
+                    },
+                }}
                 className="h-full w-full p-2"
                 data={{
                     labels: barData.labels,
