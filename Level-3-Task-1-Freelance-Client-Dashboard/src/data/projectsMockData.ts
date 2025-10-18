@@ -49,24 +49,6 @@ const projectsMockData: ProjectType[] = [
     },
     {
         id: 3,
-        name: "Landing Page for Marketing Campaign",
-        description:
-            "Created a high-conversion landing page with animations and newsletter integration using Next.js and Framer Motion.",
-        projectBanner:
-            "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-        price: 150,
-        status: "pending",
-        client: {
-            name: "Sana Malik",
-            image: "https://randomuser.me/api/portraits/women/19.jpg",
-        },
-        duration: {
-            from: "2025-10-05",
-            to: "2025-10-20",
-        },
-    },
-    {
-        id: 4,
         name: "Restaurant Mobile App UI",
         description:
             "Designed a mobile-friendly UI for a restaurant app featuring menu browsing, table booking, and payment screens in Figma.",
@@ -84,7 +66,7 @@ const projectsMockData: ProjectType[] = [
         },
     },
     {
-        id: 5,
+        id: 4,
         name: "AI Blog Content Generator",
         description:
             "Developed a full-stack AI-based blog generator using OpenAI API with authentication, subscription tiers, and dashboard analytics.",
@@ -107,7 +89,7 @@ const projectsMockData: ProjectType[] = [
         },
     },
     {
-        id: 6,
+        id: 5,
         name: "Company Branding Website",
         description:
             "Built a fast-loading static branding site for a startup using Astro and Tailwind CSS with SEO optimization.",
@@ -127,6 +109,24 @@ const projectsMockData: ProjectType[] = [
         duration: {
             from: "2025-09-01",
             to: "2025-09-20",
+        },
+    },
+    {
+        id: 6,
+        name: "Landing Page for Marketing Campaign",
+        description:
+            "Created a high-conversion landing page with animations and newsletter integration using Next.js and Framer Motion.",
+        projectBanner:
+            "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+        price: 150,
+        status: "pending",
+        client: {
+            name: "Sana Malik",
+            image: "https://randomuser.me/api/portraits/women/19.jpg",
+        },
+        duration: {
+            from: "2025-10-05",
+            to: "2025-10-20",
         },
     },
 ];
