@@ -10,15 +10,16 @@ import ProjectProvider from "../../providers/ProjectProvider";
 function DashboardLayout() {
     const navigator = useNavigate();
     const { loggedIn } = useAuth();
+
     if (loggedIn === true)
         return (
             <BaseLayout height="screen">
                 <NotificationProvider>
                     <ProjectProvider>
                         <Header />
-                        <div className="flex h-[calc(100vh-3rem)] w-full">
+                        <div className="flex h-[calc(100vh-3rem)] w-full flex-col md:flex-row">
                             <Sidebar />
-                            <main className="scrollbar-custom h-full w-[85%] overflow-y-auto">
+                            <main className="scrollbar-custom h-full flex-1 overflow-y-auto">
                                 <Outlet />
                             </main>
                         </div>
