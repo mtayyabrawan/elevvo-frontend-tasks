@@ -4,11 +4,7 @@ import { Link } from "react-router";
 import AuthButtons from "../../AuthButtons";
 
 function Navbar() {
-    const navlinks = [
-        { name: "Blog", href: "/blog" },
-        { name: "About", href: "/about" },
-        { name: "Contact", href: "/contact" },
-    ];
+    const navlinks = [{ name: "Contact", href: "/contact" }];
     return (
         <BaseHeader link="/">
             <div className="flex items-center justify-center gap-4">
