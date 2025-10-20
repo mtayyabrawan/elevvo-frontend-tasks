@@ -1,15 +1,15 @@
 import { useForm } from "react-hook-form";
-import useAuth from "../hooks/useAuth";
-import type { User } from "../context/AuthContext";
-import capitalize from "../utility/capitalize";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import useAuth from "../hooks/useAuth";
+import { IconLoaderQuarter, IconX } from "@tabler/icons-react";
 import {
     emailSchema,
     nameSchema,
     profilePictureSchema,
     usernameSchema,
 } from "../schemas/BaseSchemas";
+import type { User } from "../context/AuthContext";
 
 function EditModal({
     modalId,
@@ -39,6 +39,7 @@ function EditModal({
         ),
         defaultValues: { value: userData[modalId as keyof User] },
     });
+
     function formSubmit({
         value,
     }: {
@@ -53,53 +54,57 @@ function EditModal({
         reset();
         toggleModal("", false);
     }
+
     return (
-        <div className="fixed top-0 left-1/2 z-50 h-full w-full max-w-[1540px] -translate-x-1/2 bg-black/20 backdrop-blur-xs">
+        <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/20 px-4 backdrop-blur-xs">
             <form
-                className="mx-auto mt-28 h-auto w-1/3 space-y-4 rounded-sm bg-slate-400/40 p-4 shadow-[0px_0px_3px_1px_black]"
+                className="mt-28 w-full max-w-md space-y-4 rounded-sm bg-slate-400/40 p-4 shadow-[0px_0px_3px_1px_black] dark:bg-slate-800/40"
                 noValidate
                 onSubmit={handleSubmit(formSubmit)}
             >
-                <div className="relative flex w-full flex-col items-center justify-center gap-2 text-sm">
+                <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-medium capitalize">
+                        {modalId.replace(/([A-Z])/g, " $1").trim()}
+                    </h3>
+                    <button
+                        type="button"
+                        onClick={() => toggleModal("", false)}
+                        className="rounded-full p-1 hover:bg-slate-300/20"
+                    >
+                        <IconX className="h-5 w-5" />
+                    </button>
+                </div>
+
+                <div className="relative">
                     {errors.value && (
-                        <p className="absolute top-1 right-4 text-xs text-nowrap text-red-500 dark:text-red-400">
+                        <p className="absolute -top-5 right-0 text-xs text-red-500">
                             {errors.value.message}
                         </p>
                     )}
-                    <label htmlFor="value" className="w-[93%]">
-                        {capitalize(
-                            modalId === "profilePicture"
-                                ? "Profile Picture"
-                                : modalId
-                        )}
-                    </label>
                     <input
-                        type={
-                            modalId === "email"
-                                ? modalId
-                                : modalId === "profilePicture"
-                                  ? "url"
-                                  : "text"
-                        }
-                        id="value"
+                        type={modalId === "email" ? "email" : "text"}
                         {...register("value")}
-                        className={`w-[95%] rounded-md bg-slate-100 p-2 text-center ring-[1px] focus-visible:outline-hidden dark:bg-slate-950 ${errors.value ? "ring-red-500 dark:ring-red-400" : "ring-slate-500 dark:ring-slate-400"}`}
+                        className="w-full rounded-md bg-slate-100 p-2 text-center ring-1 focus-visible:outline-none dark:bg-slate-950"
                     />
                 </div>
-                <div className="mx-auto flex w-[95%] items-center justify-end gap-4">
+
+                <div className="flex justify-end gap-2">
                     <button
                         type="button"
-                        onClick={() => toggleModal("")}
-                        className="cursor-pointer rounded-sm bg-gray-300 p-1 text-xs font-medium focus-visible:outline-hidden dark:bg-gray-400"
+                        onClick={() => toggleModal("", false)}
+                        className="rounded px-3 py-1.5 text-sm hover:bg-slate-300/20"
                     >
                         Cancel
                     </button>
                     <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="cursor-pointer rounded-sm bg-blue-700 p-1 text-xs font-medium text-white focus-visible:outline-hidden dark:bg-blue-400"
+                        className="inline-flex items-center gap-2 rounded bg-blue-600 px-3 py-1.5 text-sm text-white hover:bg-blue-700 disabled:opacity-50"
                     >
-                        Update
+                        Save
+                        {isSubmitting && (
+                            <IconLoaderQuarter className="h-4 w-4 animate-spin" />
+                        )}
                     </button>
                 </div>
             </form>

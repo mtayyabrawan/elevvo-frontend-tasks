@@ -8,7 +8,6 @@ function Sidebar() {
 
     return (
         <>
-            {/* Mobile: horizontal scrollable nav */}
             <nav className="flex w-full gap-2 overflow-x-auto bg-slate-400/50 p-2 text-sm md:hidden dark:bg-slate-700/50">
                 {dashboardNavlinks.map((link, idx) => (
                     <Link
@@ -20,8 +19,6 @@ function Sidebar() {
                     </Link>
                 ))}
             </nav>
-
-            {/* Desktop / tablet: vertical sidebar */}
             <nav className="scrollbar-custom hidden h-full w-[15%] flex-col items-start justify-start gap-2 overflow-y-auto bg-slate-400/50 p-2 text-sm md:flex dark:bg-slate-700/50">
                 {dashboardNavlinks.map((link, idx) => (
                     <Link
