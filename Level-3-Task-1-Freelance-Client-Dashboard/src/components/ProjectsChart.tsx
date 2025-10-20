@@ -4,7 +4,6 @@ import useProject from "../hooks/useProject";
 
 function ProjectsChart() {
     ChartJs.register(Tooltip, Legend, ArcElement);
-
     const { projects } = useProject();
 
     const data = [
@@ -14,18 +13,33 @@ function ProjectsChart() {
     ];
 
     return (
-        <div className="flex h-72 w-full items-center justify-center">
+        <div className="h-[300px] w-full sm:h-[350px] lg:h-[400px]">
             <Pie
                 options={{
                     responsive: true,
+                    maintainAspectRatio: false,
                     plugins: {
                         legend: {
-                            position: "bottom",
-                            labels: { color: "white" },
+                            position: "bottom" as const,
+                            labels: {
+                                color: "white",
+                                font: {
+                                    size: window.innerWidth < 768 ? 10 : 12,
+                                },
+                                padding: window.innerWidth < 768 ? 10 : 20,
+                            },
+                        },
+                        title: {
+                            display: true,
+                            text: "Project Status",
+                            color: "white",
+                            font: { size: window.innerWidth < 768 ? 14 : 16 },
+                            padding: {
+                                bottom: window.innerWidth < 768 ? 10 : 20,
+                            },
                         },
                     },
                 }}
-                className="h-full w-full p-2"
                 data={{
                     labels: ["Completed", "Cancelled", "Pending"],
                     datasets: [
@@ -37,6 +51,7 @@ function ProjectsChart() {
                                 "purple",
                                 "skyblue",
                             ],
+                            borderWidth: 1,
                             hoverOffset: 4,
                         },
                     ],

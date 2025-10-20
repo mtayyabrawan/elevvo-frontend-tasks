@@ -20,26 +20,24 @@ function EarningsChart() {
         Tooltip,
         Legend
     );
-
     const { projects } = useProject();
-
     const completedProjects: ProjectType[] = projects.filter(
         (project) => project.status === "completed"
     );
 
     const Months = {
-        0: "January",
-        1: "Feburary",
-        2: "March",
-        3: "April",
+        0: "Jan",
+        1: "Feb",
+        2: "Mar",
+        3: "Apr",
         4: "May",
-        5: "June",
-        6: "July",
-        7: "August",
-        8: "September",
-        9: "October",
-        10: "November",
-        11: "December",
+        5: "Jun",
+        6: "Jul",
+        7: "Aug",
+        8: "Sep",
+        9: "Oct",
+        10: "Nov",
+        11: "Dec",
     };
 
     const barData = {
@@ -55,24 +53,56 @@ function EarningsChart() {
     };
 
     return (
-        <div className="flex h-72 w-full items-center justify-center">
+        <div className="h-[300px] w-full sm:h-[350px] lg:h-[400px]">
             <Bar
                 options={{
                     responsive: true,
+                    maintainAspectRatio: false,
                     plugins: {
                         legend: {
-                            labels: { color: "white" },
+                            display: true,
+                            position: "top" as const,
+                            labels: {
+                                color: "white",
+                                font: {
+                                    size: window.innerWidth < 768 ? 10 : 12,
+                                },
+                            },
+                        },
+                        title: {
+                            display: true,
+                            text: "Monthly Earnings",
+                            color: "white",
+                            font: { size: window.innerWidth < 768 ? 14 : 16 },
+                        },
+                    },
+                    scales: {
+                        y: {
+                            ticks: {
+                                color: "white",
+                                font: {
+                                    size: window.innerWidth < 768 ? 10 : 12,
+                                },
+                            },
+                        },
+                        x: {
+                            ticks: {
+                                color: "white",
+                                font: {
+                                    size: window.innerWidth < 768 ? 10 : 12,
+                                },
+                            },
                         },
                     },
                 }}
-                className="h-full w-full p-2"
                 data={{
                     labels: barData.labels,
                     datasets: [
                         {
-                            label: "Months",
+                            label: "Earnings ($)",
                             data: barData.data,
                             backgroundColor: "oklch(82.8% 0.189 84.429)",
+                            borderRadius: 4,
                         },
                     ],
                 }}
